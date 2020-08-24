@@ -1,0 +1,15 @@
+*.cap usr/share/bettercap/caplets
+crypto-miner usr/share/bettercap/caplets
+download-autopwn usr/share/bettercap/caplets
+enumerate usr/share/bettercap/caplets
+fb-phish usr/share/bettercap/caplets
+gitspoof usr/share/bettercap/caplets
+hstshijack usr/share/bettercap/caplets
+http-req-dump usr/share/bettercap/caplets
+jsinject usr/share/bettercap/caplets
+login-manager-abuse usr/share/bettercap/caplets
+proxy-script-test usr/share/bettercap/caplets
+rtfm usr/share/bettercap/caplets
+tcp-req-dump usr/share/bettercap/caplets
+web-override usr/share/bettercap/caplets
+www usr/share/bettercap/caplets

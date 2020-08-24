@@ -1,0 +1,17 @@
+Source: bettercap-caplets
+Section: misc
+Priority: optional
+Maintainer: Kevin Chevreuil - Kaisen <kaisen@kaisen-linux.org>
+Build-Depends: debhelper
+Standards-Version: 4.5.0
+Homepage: https://github.com/bettercap/caplets
+Vcs-Git: https://gitlab.com/kaisenlinux/packages/bettercap-caplets.git
+Vcs-Browser: https://gitlab.com/kaisenlinux/packages/bettercap-caplets
+
+Package: bettercap-caplets
+Architecture: all
+Depends: ${misc:Depends}, bettercap-ui
+Recommends: bettercap
+Description: Bettercap scripts (caplets) and proxy modules
+ This package contains Bettercap scripts (caplets) and proxy modules. The
+ bettercap's interactive sessions can be scripted with .cap files, or caplets.
