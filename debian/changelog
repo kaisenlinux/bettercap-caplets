@@ -1,3 +1,9 @@
+bettercap-caplets (0+git20210611-1kaisen) kaisen-packages; urgency=medium
+
+  * Import source of the git repository in date: 06/11/2021
+
+ -- Kevin Chevreuil - Kaisen <kaisen@kaisenlinux.org>  Fri, 11 Jun 2021 16:18:42 +0200
+
 bettercap-caplets (0+git20200413-0kaisen1) kaisen-packages; urgency=medium
 
   * First packaging for Kaisen Linux

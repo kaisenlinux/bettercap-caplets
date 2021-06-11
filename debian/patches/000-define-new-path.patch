@@ -1,0 +1,130 @@
+Author: Kevin Chevreuil - Kaisen <kaisen@kaisenlinux.org>
+
+--- bettercap-caplets-0+git20210611.orig/download-autopwn/README.md
++++ bettercap-caplets-0+git20210611/download-autopwn/README.md
+@@ -144,7 +144,7 @@ function onResponse(req, res) {
+ 						// Check requested file size
+ 						requestedFile = res.ReadBody()
+ 						requestedFileSize = requestedFile.length
+-						payload = readFile("/usr/local/share/bettercap/caplets/download-autopwn/" + targets[t]["device"] + "/payload." + extension)
++						payload = readFile("/usr/share/bettercap/caplets/download-autopwn/" + targets[t]["device"] + "/payload." + extension)
+ 						payloadSize = payload.length
+ 						logStr += redLine + "  The size of the requested file is " + boldRed + requestedFileSize + reset + " bytes" + 
+ 						          redLine + "  The raw size of your payload is " + boldRed + payloadSize + reset + " bytes" + redLine
+--- bettercap-caplets-0+git20210611.orig/hstshijack/README.md
++++ bettercap-caplets-0+git20210611/hstshijack/README.md
+@@ -11,15 +11,15 @@
+ # variables get precendence over those assigned to the 'hstshijack.ignore' variable.
+ set hstshijack.targets         *.google.com, google.com, gstatic.com, *.gstatic.com
+ set hstshijack.replacements    *.google.corn,google.corn,gstatic.corn,*.gstatic.corn
+-set hstshijack.ssl.domains     /usr/local/share/bettercap/caplets/hstshijack/domains.txt
+-set hstshijack.ssl.index       /usr/local/share/bettercap/caplets/hstshijack/index.json
++set hstshijack.ssl.domains     /usr/share/bettercap/caplets/hstshijack/domains.txt
++set hstshijack.ssl.index       /usr/share/bettercap/caplets/hstshijack/index.json
+ set hstshijack.ssl.check       true
+ #set hstshijack.blockscripts    example.com,*.example.com
+ set hstshijack.obfuscate       true
+-set hstshijack.payloads        *:/usr/local/share/bettercap/caplets/hstshijack/payloads/hijack.js,*:/usr/local/share/bettercap/caplets/hstshijack/payloads/sslstrip.js,*:/usr/local/share/bettercap/caplets/hstshijack/payloads/keylogger.js
++set hstshijack.payloads        *:/usr/share/bettercap/caplets/hstshijack/payloads/hijack.js,*:/usr/share/bettercap/caplets/hstshijack/payloads/sslstrip.js,*:/usr/share/bettercap/caplets/hstshijack/payloads/keylogger.js
+ #set hstshijack.ignore          *
+ 
+-set http.proxy.script  /usr/local/share/bettercap/caplets/hstshijack/hstshijack.js
++set http.proxy.script  /usr/share/bettercap/caplets/hstshijack/hstshijack.js
+ http.proxy on
+ 
+ set dns.spoof.domains  *.google.corn,google.corn,gstatic.corn,*.gstatic.corn
+@@ -75,7 +75,7 @@ Custom payloads are (optionally) obfusca
+ Example:
+ 
+ ```sh
+-set hstshijack.payloads        *:/usr/local/share/bettercap/caplets/hstshijack/payloads/hijack.js,*:/usr/local/share/bettercap/caplets/hstshijack/payloads/sslstrip.js,*:/usr/local/share/bettercap/caplets/hstshijack/payloads/keylogger.js
++set hstshijack.payloads        *:/usr/share/bettercap/caplets/hstshijack/payloads/hijack.js,*:/usr/share/bettercap/caplets/hstshijack/payloads/sslstrip.js,*:/usr/share/bettercap/caplets/hstshijack/payloads/keylogger.js
+ ```
+ 
+ You should always inject the <a href="./payloads/hijack.js">**hijack.js**</a> payload when spoofing hostnames.
+--- bettercap-caplets-0+git20210611.orig/hstshijack/hstshijack.cap
++++ bettercap-caplets-0+git20210611/hstshijack/hstshijack.cap
+@@ -4,15 +4,15 @@
+ # variables get precendence over those assigned to the 'hstshijack.ignore' variable.
+ set hstshijack.targets         *.google.com, google.com, gstatic.com, *.gstatic.com
+ set hstshijack.replacements    *.google.corn,google.corn,gstatic.corn,*.gstatic.corn
+-set hstshijack.ssl.domains     /usr/local/share/bettercap/caplets/hstshijack/domains.txt
+-set hstshijack.ssl.index       /usr/local/share/bettercap/caplets/hstshijack/index.json
++set hstshijack.ssl.domains     /usr/share/bettercap/caplets/hstshijack/domains.txt
++set hstshijack.ssl.index       /usr/share/bettercap/caplets/hstshijack/index.json
+ set hstshijack.ssl.check       true
+ #set hstshijack.blockscripts    example.com,*.example.com
+ set hstshijack.obfuscate       true
+-set hstshijack.payloads        *:/usr/local/share/bettercap/caplets/hstshijack/payloads/hijack.js,*:/usr/local/share/bettercap/caplets/hstshijack/payloads/sslstrip.js,*:/usr/local/share/bettercap/caplets/hstshijack/payloads/keylogger.js
++set hstshijack.payloads        *:/usr/share/bettercap/caplets/hstshijack/payloads/hijack.js,*:/usr/share/bettercap/caplets/hstshijack/payloads/sslstrip.js,*:/usr/share/bettercap/caplets/hstshijack/payloads/keylogger.js
+ #set hstshijack.ignore          *
+ 
+-set http.proxy.script  /usr/local/share/bettercap/caplets/hstshijack/hstshijack.js
++set http.proxy.script  /usr/share/bettercap/caplets/hstshijack/hstshijack.js
+ http.proxy on
+ 
+ set dns.spoof.domains  *.google.corn,google.corn,gstatic.corn,*.gstatic.corn
+--- bettercap-caplets-0+git20210611.orig/http-ui.cap
++++ bettercap-caplets-0+git20210611/http-ui.cap
+@@ -4,7 +4,7 @@ set api.rest.port 8081
+ set http.server.address 127.0.0.1
+ set http.server.port 80
+ # default installation path of the ui
+-set http.server.path /usr/local/share/bettercap/ui
++set http.server.path /usr/share/bettercap/ui
+ 
+ # !!! CHANGE THESE !!!
+ set api.rest.username user
+--- bettercap-caplets-0+git20210611.orig/https-ui.cap
++++ bettercap-caplets-0+git20210611/https-ui.cap
+@@ -10,7 +10,7 @@ set https.server.key ~/.bettercap-https.
+ set api.rest.certificate ~/.bettercap-https.cert.pem
+ set api.rest.key ~/.bettercap-https.key.pem 
+ # default installation path of the ui
+-set https.server.path /usr/local/share/bettercap/ui
++set https.server.path /usr/share/bettercap/ui
+ 
+ # !!! CHANGE THESE !!!
+ set api.rest.username user
+--- bettercap-caplets-0+git20210611.orig/login-manager-abuse/login-man-abuse.js
++++ bettercap-caplets-0+git20210611/login-manager-abuse/login-man-abuse.js
+@@ -13,7 +13,7 @@ var AbuserJavascript = "";
+ 
+ function onLoad() {
+     // log( "Loading abuser code from login-man-abuser.js" );
+-    AbuserJavascript = readFile("/usr/local/share/bettercap/caplets/login-manager-abuse/login-man-abuser.js")
++    AbuserJavascript = readFile("/usr/share/bettercap/caplets/login-manager-abuse/login-man-abuser.js")
+ }
+ 
+ // here we intercept the ajax POST request with leaked credentials.
+--- bettercap-caplets-0+git20210611.orig/pwnagotchi-manual.cap
++++ bettercap-caplets-0+git20210611/pwnagotchi-manual.cap
+@@ -6,7 +6,7 @@ set api.rest.address 0.0.0.0
+ set api.rest.port 8081
+ set http.server.address 0.0.0.0
+ set http.server.port 80
+-set http.server.path /usr/local/share/bettercap/ui
++set http.server.path /usr/share/bettercap/ui
+ set api.rest.username pwnagotchi
+ set api.rest.password pwnagotchi
+ set api.rest.websocket true
+--- bettercap-caplets-0+git20210611.orig/rtfm/rtfm.js
++++ bettercap-caplets-0+git20210611/rtfm/rtfm.js
+@@ -18,7 +18,7 @@ function onResponse(req, res) {
+         }
+         res.SetHeader("Connection", "close");
+         res.Status  = 200;
+-        res.Body    = readFile("/usr/local/share/bettercap/caplets/www/rtfm_cat.jpg");
++        res.Body    = readFile("/usr/share/bettercap/caplets/www/rtfm_cat.jpg");
+         log("RTFM! " + req.Hostname + req.Path + ( req.Query ? "?" + req.Query : ''));
+     }
+ }
+--- bettercap-caplets-0+git20210611.orig/web-override/web-override.js
++++ bettercap-caplets-0+git20210611/web-override/web-override.js
+@@ -9,5 +9,5 @@ function onRequest(req, res) {
+     res.SetHeader("Connection", "close");
+     res.Status      = 200;
+     res.ContentType = "text/html";
+-    res.Body        =  readFile("/usr/local/share/bettercap/caplets/www/index.html");
++    res.Body        =  readFile("/usr/share/bettercap/caplets/www/index.html");
+ }

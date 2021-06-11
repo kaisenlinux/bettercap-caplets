@@ -1,4 +1,4 @@
-// Called before every request is executed, just override the response with
+// Called before every request is executed, just override the response with 
 // our own html web page.
 function onRequest(req, res) {
     headers = res.Headers.split("\r\n");
@@ -9,5 +9,5 @@ function onRequest(req, res) {
     res.SetHeader("Connection", "close");
     res.Status      = 200;
     res.ContentType = "text/html";
-    res.Body        =  readFile("/usr/share/bettercap/caplets/www/index.html");
+    res.Body        =  readFile("/usr/local/share/bettercap/caplets/www/index.html");
 }

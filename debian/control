@@ -1,9 +1,9 @@
 Source: bettercap-caplets
 Section: misc
 Priority: optional
-Maintainer: Kevin Chevreuil - Kaisen <kaisen@kaisen-linux.org>
+Maintainer: Kevin Chevreuil - Kaisen <kaisen@kaisenlinux.org>
 Build-Depends: debhelper
-Standards-Version: 4.5.0
+Standards-Version: 4.5.1
 Homepage: https://github.com/bettercap/caplets
 Vcs-Git: https://gitlab.com/kaisenlinux/packages/bettercap-caplets.git
 Vcs-Browser: https://gitlab.com/kaisenlinux/packages/bettercap-caplets
